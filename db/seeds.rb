@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+for i in 1..20
+	for j in 1..20
+		Box.create(name: "box#{i}#{j}")
+	end
+end
