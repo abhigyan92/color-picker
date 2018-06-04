@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  has_many :selections
+
   before_create :generate_random_user
 
 	def generate_random_user

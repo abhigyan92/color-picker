@@ -1,0 +1,3 @@
+var boxId = "#" + "<%= @box.name %>";
+$(boxId).attr('data-original-title', "<%=@selection.color%>");
+$(boxId).attr('data-content', "by <%= @user.name%>");

@@ -3,8 +3,14 @@ Hello
 
 = form_tag "#" do
   = label_tag :color, "Pick a color "
-  = text_field_tag :color#container
+  = text_field_tag :color
+#grid-container{"data-user-name" => "#{@user.name}"}
+  - @boxes.each do |box|
+    - if box.selections.exists? 
+      - last_selection = box.selections.last
+      - color = last_selection.color 
+      - user_name = last_selection.user.name
+    %div.grid{id: "#{box.name}", "data-toggle" => "popover", title: "#{color}", "data-content" => "by #{user_name}", "data-box-name" => "#{box.name}", style: "background-color: #{color}"}
 
-#grid-container
 
   
